@@ -29,6 +29,7 @@
                         id="transaction_name"
                         name="transaction_name"
                         placeholder="Masukkan Transaksi"
+                        autocomplete="off"
                         value="{{ old('transaction_name') }}"
                     />
                     @error('transaction_name')
@@ -58,6 +59,7 @@
                         id="price"
                         name="price"
                         placeholder="Masukkan Nominal"
+                        autocomplete="off"
                         value="{{ old('price') }}"
                     />
                     @error('price')

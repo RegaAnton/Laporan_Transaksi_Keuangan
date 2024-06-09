@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Laravel\Facades\Image;
 
 class TransactionController extends Controller
 {
@@ -58,8 +57,12 @@ class TransactionController extends Controller
         // Membuat nama unik untuk gambar dengan menambahkan waktu saat ini ke nama aslinya
         $imageName = 'image_' . $currentTime . '.' . $imageExtension;
     
-        // Memindahkan file gambar ke direktori publicimages
-        $request->file('image')->move(public_path('images'), $imageName);
+        // Kompres gambar dan simpan ke direktori public/images
+        $image = $request->file('image');
+        $img = Image::read($image);
+
+        // Kompres gambar dengan mengurangi kualitas
+        $img->save(public_path('images/' . $imageName), 30); // Kualitas 30%
     
         // Simpan data ke database
         $transaction = new Transaction();
