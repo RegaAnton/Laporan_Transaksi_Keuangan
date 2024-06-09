@@ -1,7 +1,7 @@
 <p align="center"></p>
 
 <h1 align="center">
-   <a href="https://themeselection.com/item/sneat-free-bootstrap-html-laravel-admin-template/" target="_blank" align="center">
+   <a href="https://github.com/RegaAnton/Laporan_Transaksi_Keuangan.git" target="_blank" align="center">
       Laporan Transaksi Keuangan
    </a>
 </h1>
@@ -26,7 +26,7 @@ Installing and running Sneat is super easy, please Follow below steps and you wi
 2. Clone Project
 
 ```bash
-git clone https://github.com/RegaAnton/transaction_report.git
+git clone https://github.com/RegaAnton/Laporan_Transaksi_Keuangan.git
 ```
 
 3. Use the following command to install the composer
